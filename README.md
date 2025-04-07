@@ -27,9 +27,12 @@ For simplified Chinese version: [简体中文版](./ReadMe_cn.md)
   - [Foxy](https://docs.ros.org/en/ros2_documentation/foxy/Installation.html)
   - [Galactic](https://docs.ros.org/en/ros2_documentation/galactic/Installation.html)
   - [Humble](https://docs.ros.org/en/ros2_documentation/humble/Installation.html)
-  - [Jazzy](https://docs.ros.org/en/ros2_documentation/jazzy/Installation.html)
+  - [Jazzy](https://docs.ros.org/en/ros2_documentation/jazzy/Installation.html) -- I chose it
 
-- ### 2.2 Install [Moveit2](https://moveit.ros.org/install-moveit2/binary/)  
+- ### 2.2 Install [Moveit2](https://moveit.ros.org/install-moveit2/binary/)
+- ```
+  sudo apt install ros-jazzy-moveit
+  ```
 
 - ### 2.3 Install [Gazebo](https://classic.gazebosim.org/tutorials?tut=install_ubuntu)  
 

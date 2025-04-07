@@ -88,5 +88,10 @@ For simplified Chinese version: [简体中文版](./ReadMe_cn.md)
 
 這些步驟是根據 Gazebo 官方的安裝指南整理 [Gazebo 官方安裝指南](https://gazebosim.org/docs/latest/install_ubuntu/)
 
+**Tips:**
+- Gazebo 的版本更新： Gazebo 團隊最近對版本命名進行了調整，將新版本命名為 Gazebo Ionic，而不是之前的 Garden。因此，套件名稱也相應地更新了。 [Gazebo 官方公告](https://gazebosim.org/docs/latest/getstarted/)
+  
+- ROS 2 的整合： 如果你同時使用 ROS 2 Jazzy，Gazebo Ionic 與其有良好的整合性，可以提供更順暢的開發體驗。 [ROS 2 與 Gazebo 的整合](https://github.com/gazebosim/docs/blob/master/ros_installation.md)
+
 - ### 2.4 Install [gazebo_ros_pkgs](http://gazebosim.org/tutorials?tut=ros2_installing&cat=connect_ros)  
 

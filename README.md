@@ -109,6 +109,14 @@ For simplified Chinese version: [简体中文版](./ReadMe_cn.md)
   sudo apt-get update
   sudo apt-get install gz-harmonic
   ```
+  
+  ** ...OR if you already install `gz-ionic` **
+  ```
+  sudo apt remove gz-ionic
+  sudo apt install gz-harmonic
+  sudo apt install ros-jazzy-ros-gz
+  ```
+  
 - ### 2.4 Install [ros_gz](https://github.com/gazebosim/ros_gz) - ROS 2 ↔ Gazebo Sim Bridge
 
   Since we are using **Gazebo Sim (Ionic)** instead of Gazebo Classic,  

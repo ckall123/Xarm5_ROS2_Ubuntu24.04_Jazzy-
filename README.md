@@ -64,10 +64,7 @@ For simplified Chinese version: [简体中文版](./ReadMe_cn.md)
 
 
 - #### if you install ROS 2 Jazzy
-- ```bash
-  sudo apt-get update
-  sudo apt-get install lsb-release gnupg curl
-  ```
+
 1. 安裝必要的工具：
 - ```bash
   sudo apt-get update

@@ -60,10 +60,12 @@ For simplified Chinese version: [简体中文版](./ReadMe_cn.md)
   sudo apt install ros-jazzy-moveit
   ```
 
+### Install Tips [URL](https://gazebosim.org/docs/all/getstarted/)
+
 - ### 2.3 Install [Gazebo](https://classic.gazebosim.org/tutorials?tut=install_ubuntu)
 
 
-- #### if you install ROS 2 Jazzy
+- #### if you install ROS 2 Jazzy - you will found it is not useful
 
 1. 安裝必要的工具：
 - ```bash
@@ -93,5 +95,42 @@ For simplified Chinese version: [简体中文版](./ReadMe_cn.md)
   
 - ROS 2 的整合： 如果你同時使用 ROS 2 Jazzy，Gazebo Ionic 與其有良好的整合性，可以提供更順暢的開發體驗。 [ROS 2 與 Gazebo 的整合](https://github.com/gazebosim/docs/blob/master/ros_installation.md)
 
-- ### 2.4 Install [gazebo_ros_pkgs](http://gazebosim.org/tutorials?tut=ros2_installing&cat=connect_ros)  
+- ### 2.3 Install [GZ Harmonic](https://gazebosim.org/docs/harmonic/install_ubuntu/)
+
+1. First install some necessary tools:
+- ```bash
+  sudo apt-get update
+  sudo apt-get install curl lsb-release gnupg
+  ```
+2. Then install Gazebo Harmonic:
+- ```bash
+  sudo curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+  sudo apt-get update
+  sudo apt-get install gz-harmonic
+  ```
+- ### 2.4 Install [ros_gz](https://github.com/gazebosim/ros_gz) - ROS 2 ↔ Gazebo Sim Bridge
+
+  Since we are using **Gazebo Sim (Ionic)** instead of Gazebo Classic,  
+we need to use the new bridge package `ros_gz` to integrate with ROS 2.
+
+Install it via apt:
+
+```bash
+sudo apt install ros-jazzy-ros-gz
+```
+**More info:**
+- [ros_gz GitHub Repository](https://github.com/gazebosim/ros_gz)
+- [Gazebo ROS 2 Integration Guide](https://gazebosim.org/docs/latest/ros_installation/)
+
+---
+
+### 💬 Bonus 說明
+**Note:** 
+`gazebo_ros_pkgs` is used for **Gazebo Classic (e.g. gazebo11)**.  
+Since this project uses `gz-ionic` (Gazebo Sim), please use `ros_gz` for ROS integration.
+
+
+
+
 

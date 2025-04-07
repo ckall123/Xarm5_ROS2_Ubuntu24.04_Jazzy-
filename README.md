@@ -40,7 +40,7 @@ For simplified Chinese version: [简体中文版](./ReadMe_cn.md)
   ```
 
 這些步驟的詳細說明可以參考官方文檔：
-[Ubuntu (deb packages) - Jazzy documentation - ROS 2。](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html)
+[Ubuntu (deb packages) - Jazzy documentation - ROS 2](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html)
 
 
 
@@ -63,7 +63,7 @@ For simplified Chinese version: [简体中文版](./ReadMe_cn.md)
 - ### 2.3 Install [Gazebo](https://classic.gazebosim.org/tutorials?tut=install_ubuntu)
 
 
-- **if you install ROS 2 Jazzy**
+- #### if you install ROS 2 Jazzy
 - ```bash
   sudo apt-get update
   sudo apt-get install lsb-release gnupg curl

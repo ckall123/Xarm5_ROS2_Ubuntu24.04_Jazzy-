@@ -22,6 +22,28 @@ For simplified Chinese version: [简体中文版](./ReadMe_cn.md)
 
 
 ## 2. Preparation
+1. 啟用必要的軟體庫：
+``` bash
+sudo apt install software-properties-common
+sudo add-apt-repository universe
+```
+2. 添加 ROS 2 的 GPG 金鑰：
+``` bash 
+sudo apt update && sudo apt install curl -y
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+```
+3. 添加 ROS 2 軟體庫到你的 sources list：
+``` bash 
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+```
+這些步驟的詳細說明可以參考官方文檔：[Ubuntu (deb packages) - Jazzy documentation - ROS 2。]('https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html')
+
+
+
+完成上述步驟後，更新你的軟體包索引：
+```bash
+sudo apt update
+```
 
 - ### 2.1 Install [ROS2](https://docs.ros.org/) 
   - [Foxy](https://docs.ros.org/en/ros2_documentation/foxy/Installation.html)

@@ -56,7 +56,35 @@ sudo apt update
   sudo apt install ros-jazzy-moveit
   ```
 
-- ### 2.3 Install [Gazebo](https://classic.gazebosim.org/tutorials?tut=install_ubuntu)  
+- ### 2.3 Install [Gazebo](https://classic.gazebosim.org/tutorials?tut=install_ubuntu)
+
+- if you install ROS 2 Jazzy
+```bash
+sudo apt-get update
+sudo apt-get install lsb-release gnupg curl
+```
+1. 安裝必要的工具：
+```bash
+sudo apt-get update
+sudo apt-get install lsb-release gnupg curl
+```
+2. 添加 Gazebo 的官方 GPG 金鑰：
+```bash
+sudo curl -sSL https://packages.osrfoundation.org/gazebo.gpg -o /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg
+```
+3. 添加 Gazebo 的套件庫到系統來源列表：
+```bash
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null
+```
+4. 更新套件列表並安裝 Gazebo Ionic：
+```bash
+sudo apt-get update
+sudo apt-get install gz-ionic
+```
+
+安裝完成後，你就可以使用最新版本的 Gazebo 模擬器了！🚀
+
+這些步驟是根據 Gazebo 官方的安裝指南整理 [Gazebo 官方安裝指南](https://gazebosim.org/docs/latest/install_ubuntu/)
 
 - ### 2.4 Install [gazebo_ros_pkgs](http://gazebosim.org/tutorials?tut=ros2_installing&cat=connect_ros)  
 

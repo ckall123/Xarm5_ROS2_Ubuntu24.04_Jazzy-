@@ -38,7 +38,15 @@ Type in the terminal:
 echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
-
+#### Try examples:
+**talker**
+```
+ros2 run demo_nodes_cpp talker
+```
+**listener:**
+```
+ros2 run demo_nodes_py listener
+```
 ## 2. Preparation
 
 1. 啟用必要的軟體庫：
@@ -79,11 +87,12 @@ source ~/.bashrc
   ```
 
 ### Install Tips [URL](https://gazebosim.org/docs/all/getstarted/)
+[Summary of Compatible ROS and Gazebo Combinations](https://gazebosim.org/docs/latest/ros_installation/)
 
 - ### 2.3 Install [Gazebo](https://classic.gazebosim.org/tutorials?tut=install_ubuntu)
 
 
-- #### if you install ROS 2 Jazzy - you will found it is not useful
+- #### if you install ROS 2 Jazzy - ******************you will found it is not useful******************
 
 1. 安裝必要的工具：
 - ```bash

@@ -32,6 +32,12 @@ In another terminal source the setup file and then run a Python `listener`:
 source /opt/ros/jazzy/setup.bash
 ros2 run demo_nodes_py listener
 ```
+### ...OR You can add `Source /opt/ros/jazzy/setup.bash` to your `.bashrc`
+Type in the terminal:
+```
+echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
 
 ## 2. Preparation
 

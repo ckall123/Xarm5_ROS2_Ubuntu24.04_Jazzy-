@@ -165,7 +165,68 @@ sudo apt install ros-jazzy-ros-gz
 `gazebo_ros_pkgs` is used for **Gazebo Classic (e.g. gazebo11)**.  
 Since this project uses `gz-ionic` (Gazebo Sim), please use `ros_gz` for ROS integration.
 
+## 3. How To Use
 
+- ### 3.1 Create a workspace && python venv
+  Create a workspace - Skip this step if you already have a target workspace
+  ```bash
+    cd ~
+    mkdir -p dev_ws/src
+  ```
+  Create a python venv
+  ```bash
+  sudo apt install python3-venv
+  python3 -m venv ~/ros_env
+  source ~/ros_env/bin/activate
+  pip install rosdep
+  ```
+  ```
+  pip3 install jinja2 typeguard --break-system-packages
+  ```
+
+- ### 3.2 Obtain source code of "xarm_ros2" repository
+    ```bash
+    # Remember to source ros2 environment settings first
+    cd ~/dev_ws/src
+    # DO NOT omit "--recursive"，or the source code of dependent submodule will not be downloaded.
+    # Pay attention to the use of the -b parameter command branch, $ROS_DISTRO indicates the currently activated ROS version, if the ROS environment is not activated, you need to customize the specified branch (foxy/galactic/humble/jazzy)
+    git clone https://github.com/xArm-Developer/xarm_ros2.git --recursive -b $ROS_DISTRO
+    ```
+
+- ### 3.3 Update "xarm_ros2" repository 
+    ```bash
+    cd ~/dev_ws/src/xarm_ros2
+    git pull
+    git submodule sync
+    git submodule update --init --remote
+    ```
+
+- ### 3.4 Install dependencies
+    ```bash
+    # Remember to source ros2 environment settings first
+    cd ~/dev_ws/src/
+    sudo $(which rosdep) init
+    rosdep update
+    rosdep install --from-paths . --ignore-src --rosdistro $ROS_DISTRO -y
+    ```
+
+- ### 3.5 Build xarm_ros2
+    ```bash
+    sudo apt install colcon
+    pip install empy
+    pip install numpy
+    pip install lark
+    
+    # Remember to source ros2 and moveit2 environment settings first
+    cd ~/dev_ws/
+    # build all packages
+    colcon build
+    
+    # build selected packages
+    colcon build --packages-select xarm_api
+    ```
+
+   
 
 
 

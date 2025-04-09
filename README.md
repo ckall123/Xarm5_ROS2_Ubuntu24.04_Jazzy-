@@ -92,7 +92,7 @@ ros2 run demo_nodes_py listener
 - ### 2.3 Install [Gazebo](https://classic.gazebosim.org/tutorials?tut=install_ubuntu)
 
 
-- #### if you install ROS 2 Jazzy - ******************you will found it is not useful******************
+- #### if you install ROS 2 Jazzy - ******************-------------you will found it is not useful-------------******************
 
 1. 安裝必要的工具：
 - ```bash

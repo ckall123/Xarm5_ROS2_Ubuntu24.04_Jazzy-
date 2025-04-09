@@ -20,6 +20,18 @@ For simplified Chinese version: [简体中文版](./ReadMe_cn.md)
 - Jazzy: [jazzy](https://github.com/xArm-Developer/xarm_ros2/tree/jazzy)
 - Rolling: [rolling](https://github.com/xArm-Developer/xarm_ros2/tree/rolling)
 
+### Try some examples
+If you installed `ros-jazzy-desktop` above you can try some examples.
+In one terminal, source the setup file and then run a C++ `talker`:
+```
+source /opt/ros/jazzy/setup.bash
+ros2 run demo_nodes_cpp talker
+```
+In another terminal source the setup file and then run a Python `listener`:
+```
+source /opt/ros/jazzy/setup.bash
+ros2 run demo_nodes_py listener
+```
 
 ## 2. Preparation
 

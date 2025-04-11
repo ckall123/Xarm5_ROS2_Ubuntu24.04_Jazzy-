@@ -225,7 +225,19 @@ Since this project uses `gz-ionic` (Gazebo Sim), please use `ros_gz` for ROS int
     # build selected packages
     colcon build --packages-select xarm_api
     ```
+- ### Check it and Move
+ `ls ~/dev_ws/src/xarm_ros2/xarm_gazebo/launch`
+ `cd ~/dev_ws/`
 
+  ```bash
+  source install/setup.bash  # 每次開 terminal 都要 source 一次
+
+  # 啟動 Gazebo 模擬環境（xarm with realsense）
+  ros2 launch xarm_gazebo xarm5_beside_table_gazebo.launch.py
+  # 然後啟動 MoveIt：
+  ros2 launch xarm_moveit_config xarm5_moveit_planning_execution.launch.py
+  ```
+  #### 用程式控制」xArm
    
 
 

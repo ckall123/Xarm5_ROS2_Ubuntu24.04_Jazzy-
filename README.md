@@ -237,7 +237,111 @@ Since this project uses `gz-ionic` (Gazebo Sim), please use `ros_gz` for ROS int
   # 然後啟動 MoveIt：
   ros2 launch xarm_moveit_config xarm5_moveit_planning_execution.launch.py
   ```
-  #### 用程式控制」xArm
+- #### 用程式控制」xArm
+---------------------------------------------------------------------------------------
+### In VScode if you wanna 
+
+### Add `Source /opt/ros/jazzy/setup.bash` to your `.bashrc`
+Type in the terminal:
+
+```bash
+echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+
+### Create a python venv
+```bash
+sudo apt install python3-venv
+python3 -m venv ~/ros_env
+```
+
+### connect venv 
+```bash 
+source ~/ros_env/bin/activate
+```
+
+### connect your ROS environment 
+```bash
+source ~/dev_ws/install/setup.bash
+```
+
+## Move your Xarm5 
+
+#### If you have snap in your VScode -- you can Turn off your `Snap`
+```bash
+sudo snap remove code
+sudo apt install software-properties-common apt-transport-https wget
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt update
+sudo apt install code
+```
+
+```
+source /opt/ros/jazzy/setup.bash
+source ~/dev_ws/install/setup.bash
+```
+
+####  Start your xarm_planner
+```
+cd ~/dev_ws/
+
+# run the fake robotic arm 
+ros2 launch xarm_planner xarm6_planner_fake.launch.py add_gripper:=true
+
+# run real robotic arm 
+ros2 launch xarm_planner xarm6_planner_realmove.launch.py robot_ip:=192.168.1.244 add_gripper:=true
+```
+
+Below additional tests are just for xArm:
+```
+ros2 launch xarm_planner test_xarm_gripper_planner_api_joint.launch.py dof:=6
+```
+```
+ros2 launch xarm_planner test_xarm_planner_api_pose.launch.py dof:=6 robot_type:=xarm
+```
+
+#### If you wanna run your own python file 
+
+1. First, know what mode you're running.  real or fake
+2. And know the topic what you are using 
+   
+**fake or real mode**
+- if using fake mode 
+  finding the launch file. `src/xarm_ros2/<package>/launch`
+  
+  ```
+  # dof is in launch file 
+  xarm{dof}_traj_controller/joint_trajectory
+  ```
+
+
+- if ising real mode 
+  ```
+  /xarm/xarm_traj_controller/joint_trajectory
+  ```
+
+
+
+you need to find `src/xarm_ros2/<package>/CMakeLists.txt`
+
+Add in CMakeLists.txt:
+```cmake
+install(PROGRAMS
+  scripts/my_xarm_dance.py
+  DESTINATION lib/xarm_planner
+)
+```
+
+And Run : 
+```bash
+colcon build --symlink-install
+source install/setup.bash
+ros2 run xarm_planner my_xarm_dance.py
+```
+
+
+  
    
 
 
